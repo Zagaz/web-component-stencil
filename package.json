@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "build": "stencil build",
-    "start": "stencil build --dev --watch --serve",
+    "dev": "stencil build --dev --watch --serve",
     "test": "stencil-test",
     "test:watch": "stencil-test --watch",
     "generate": "stencil generate"
