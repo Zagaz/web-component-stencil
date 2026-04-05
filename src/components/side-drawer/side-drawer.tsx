@@ -13,7 +13,6 @@ export class SideDrawer {
    */
   @Prop() title: string = 'Lorem Prop Defaltum Titulum';
 
-
   render() {
     return (
       <aside>

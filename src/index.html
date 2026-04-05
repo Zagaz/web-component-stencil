@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -7,8 +7,44 @@
 
     <script type="module" src="/build/web-component-stencil.esm.js"></script>
     <script nomodule src="/build/web-component-stencil.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        background-color: red;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+      }
+      nav {
+        ul {
+          background-color: #ccc;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 0 1rem;
+          list-style: none;
+          li {
+            margin-right: 1rem;
+            a{
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    </style>
   </head>
   <body>
-    <ltc-side-drawer title="Lorem Minem Titulum" ></ltc-side-drawer>
+    <ltc-side-drawer title="Lorem Minem Titulum">
+      <nav>
+        <ul>
+          <li><a href="#unum">Unum</a></li>
+          <li><a href="#duet">Duet </a></li>
+          <li><a href="#trio">Trio</a></li>
+        </ul>
+      </nav>
+    </ltc-side-drawer>
   </body>
 </html>
