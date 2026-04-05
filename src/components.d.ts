@@ -6,63 +6,47 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface LtcSideDrawer {
         /**
-          * The first name
+          * The title of the side drawer.
+          * @default 'Lorem Prop Defaltum Titulum'
          */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "title": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLLtcSideDrawerElement extends Components.LtcSideDrawer, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLLtcSideDrawerElement: {
+        prototype: HTMLLtcSideDrawerElement;
+        new (): HTMLLtcSideDrawerElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "ltc-side-drawer": HTMLLtcSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface LtcSideDrawer {
         /**
-          * The first name
+          * The title of the side drawer.
+          * @default 'Lorem Prop Defaltum Titulum'
          */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "title"?: string;
     }
 
-    interface MyComponentAttributes {
-        "first": string;
-        "middle": string;
-        "last": string;
+    interface LtcSideDrawerAttributes {
+        "title": string;
     }
 
     interface IntrinsicElements {
-        "my-component": Omit<MyComponent, keyof MyComponentAttributes> & { [K in keyof MyComponent & keyof MyComponentAttributes]?: MyComponent[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `attr:${K}`]?: MyComponentAttributes[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `prop:${K}`]?: MyComponent[K] };
+        "ltc-side-drawer": Omit<LtcSideDrawer, keyof LtcSideDrawerAttributes> & { [K in keyof LtcSideDrawer & keyof LtcSideDrawerAttributes]?: LtcSideDrawer[K] } & { [K in keyof LtcSideDrawer & keyof LtcSideDrawerAttributes as `attr:${K}`]?: LtcSideDrawerAttributes[K] } & { [K in keyof LtcSideDrawer & keyof LtcSideDrawerAttributes as `prop:${K}`]?: LtcSideDrawer[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.IntrinsicElements["my-component"] & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ltc-side-drawer": LocalJSX.IntrinsicElements["ltc-side-drawer"] & JSXBase.HTMLAttributes<HTMLLtcSideDrawerElement>;
         }
     }
 }
