@@ -13,17 +13,21 @@ export class SideDrawer {
    */
   @Prop() title: string = 'Lorem Prop Defaltum Titulum';
 
+ /**
+  * Defines whether the side drawer is opened or closed.
+  */
+  @Prop() opened: boolean ;
+
   render() {
-    return (
+    return this.opened ? (
       <aside>
         <header>
           <h1>{this.title}</h1>
         </header>
         <main>
           <slot></slot>
-          <p>This is the main content area.</p>
-          </main>
+        </main>
       </aside>
-    );
+    ) : null;
   }
 }

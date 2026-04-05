@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface LtcSideDrawer {
         /**
+          * Defines whether the side drawer is opened or closed.
+         */
+        "opened": boolean;
+        /**
           * The title of the side drawer.
           * @default 'Lorem Prop Defaltum Titulum'
          */
@@ -28,6 +32,10 @@ declare global {
 declare namespace LocalJSX {
     interface LtcSideDrawer {
         /**
+          * Defines whether the side drawer is opened or closed.
+         */
+        "opened"?: boolean;
+        /**
           * The title of the side drawer.
           * @default 'Lorem Prop Defaltum Titulum'
          */
@@ -36,6 +44,7 @@ declare namespace LocalJSX {
 
     interface LtcSideDrawerAttributes {
         "title": string;
+        "opened": boolean;
     }
 
     interface IntrinsicElements {
