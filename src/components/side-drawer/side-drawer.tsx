@@ -9,27 +9,32 @@ export class SideDrawer {
   @State() showContactInfo: boolean = false;
 
   /**
-   * The title of the side drawer.
+   * The theTitle of the side drawer.
    */
-  @Prop({ reflect: true, mutable: true }) title: string = 'Lorem Prop Defaltum Titulum';
+  @Prop({ reflect: true, mutable: true }) theTitle: string = 'Lorem Prop Defaltum Titulum';
 
   /**
    * Defines whether the side drawer is opened or closed.
    */
   @Prop({ reflect: true, mutable: true }) opened: boolean = false;
 
-  onCloseDrawer() {
-    this.opened = false;
+  toggleDrawer() {
+    this.opened = !this.opened;
   }
+
   onContactChange(content: string) {
     console.warn(content);
     this.showContactInfo = content === 'nav';
   }
+
   @Method()
-  async open() {
-    this.opened = !this.opened
-    console.warn(this.opened );
+  async exampleMethod() {
+    console.log('Example method called');
+    return 'Hello from exampleMethod!';
   }
+   
+
+
 
   render() {
     let mainContent = <slot />;
@@ -39,21 +44,27 @@ export class SideDrawer {
           <h2>Contact Us</h2>
           <p>Lorem ipsum dolor sit amet </p>
         </div>
-      );
+      )
     }
 
     return (
       <aside>
+          
         <header>
-          <button onClick={this.onCloseDrawer.bind(this)}>X</button>
-          <h1>{this.title}</h1>
-        </header>
+          <button
+            onClick={() => this.toggleDrawer()}
+            aria-label={this.opened ? 'Close drawer' : 'Open drawer'}
+          >
+            {this.opened ? '✕' : '☰'}
+          </button>
+          <h1>{this.theTitle}</h1>
         <section id="tabs">
           <button class={this.showContactInfo ? 'active' : ''} onClick={this.onContactChange.bind(this, 'nav')}>
             Navigation
           </button>
           <button class={!this.showContactInfo ? 'active' : ''} onClick={this.onContactChange.bind(this, 'contact')}>Contact</button>
         </section>
+        </header>
         <main>{mainContent}</main>
       </aside>
     );

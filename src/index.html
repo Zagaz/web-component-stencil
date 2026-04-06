@@ -32,56 +32,33 @@
           }
         }
       }
-
-      #side-drawer-button {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        cursor: pointer;
-        z-index: 1000;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 25px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        &:active {
-          transform: translateY(0);
-          box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
-        }
-      }
     </style>
   </head>
   <body>
-    <button id="side-drawer-button">Click</button>
     <header>
-      <ltc-side-drawer title="Lorem Minem Titulum" opened>
+    
+      <ltc-side-drawer title="Lorem Minem Titulum" opened >
         <nav>
           <ul>
-            <li><a href="#unum">Unum</a></li>
-            <li><a href="#duet">Duet </a></li>
-            <li><a href="#trio">Trio</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </nav>
+
       </ltc-side-drawer>
     </header>
-    <script>
-      const button = document.querySelector('#side-drawer-button');
-      const sideDrawer = document.querySelector('ltc-side-drawer');
-      button.addEventListener('click', () => {
-        sideDrawer.open();
-      });
-    </script>
   </body>
 </html>
+<script>
+  // Example of calling the exampleMethod from the side drawer component
+  document.addEventListener('DOMContentLoaded', () => {
+    const sideDrawer = document.querySelector('ltc-side-drawer');
+    if (sideDrawer) {
+      sideDrawer.exampleMethod().then(result => {
+        console.log(result); 
+      });
+    }
+  });
+  
+</script>
