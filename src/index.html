@@ -19,9 +19,8 @@
       }
       nav {
         ul {
-          background-color: #ccc;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           align-items: center;
           padding: 0 1rem;
           list-style: none;
@@ -48,7 +47,6 @@
   <body>
     <header>
       <ltc-side-drawer title="Lorem Minem Titulum" opened>
-        <button id="side-drawer-button">Click</button>
         <nav>
           <ul>
             <li><a href="#unum">Unum</a></li>
@@ -56,13 +54,14 @@
             <li><a href="#trio">Trio</a></li>
           </ul>
         </nav>
+        <button id="side-drawer-button">Click</button>
       </ltc-side-drawer>
     </header>
     <script>
       const button = document.querySelector('#side-drawer-button');
       const sideDrawer = document.querySelector('ltc-side-drawer');
       button.addEventListener('click', () => {
-        sideDrawer.opened = true
+        sideDrawer.opened = false
       });
     </script>
   </body>
