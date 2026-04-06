@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State, Method } from '@stencil/core';
 
 @Component({
   tag: 'ltc-side-drawer',
@@ -6,7 +6,7 @@ import { Component, h, Prop, State } from '@stencil/core';
   shadow: true,
 })
 export class SideDrawer {
-  @State() showContectInfo: boolean = false;
+  @State() showContactInfo: boolean = false;
 
   /**
    * The title of the side drawer.
@@ -23,12 +23,17 @@ export class SideDrawer {
   }
   onContactChange(content: string) {
     console.warn(content);
-    this.showContectInfo = content === 'nav';
+    this.showContactInfo = content === 'nav';
+  }
+  @Method()
+  async open() {
+    this.opened = !this.opened
+    console.warn(this.opened );
   }
 
   render() {
     let mainContent = <slot />;
-    if (!this.showContectInfo) {
+    if (!this.showContactInfo) {
       mainContent = (
         <div id="contact-information">
           <h2>Contact Us</h2>
@@ -44,10 +49,10 @@ export class SideDrawer {
           <h1>{this.title}</h1>
         </header>
         <section id="tabs">
-          <button class={this.showContectInfo ? 'active' : ''} onClick={this.onContactChange.bind(this, 'nav')}>
+          <button class={this.showContactInfo ? 'active' : ''} onClick={this.onContactChange.bind(this, 'nav')}>
             Navigation
           </button>
-          <button class={!this.showContectInfo ? 'active' : ''} onClick={this.onContactChange.bind(this, 'contact')}>Contact</button>
+          <button class={!this.showContactInfo ? 'active' : ''} onClick={this.onContactChange.bind(this, 'contact')}>Contact</button>
         </section>
         <main>{mainContent}</main>
       </aside>

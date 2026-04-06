@@ -45,6 +45,7 @@
     </style>
   </head>
   <body>
+    <button id="side-drawer-button">Click</button>
     <header>
       <ltc-side-drawer title="Lorem Minem Titulum" opened>
         <nav>
@@ -54,14 +55,13 @@
             <li><a href="#trio">Trio</a></li>
           </ul>
         </nav>
-        <button id="side-drawer-button">Click</button>
       </ltc-side-drawer>
     </header>
     <script>
       const button = document.querySelector('#side-drawer-button');
       const sideDrawer = document.querySelector('ltc-side-drawer');
       button.addEventListener('click', () => {
-        sideDrawer.opened = false
+        sideDrawer.open();
       });
     </script>
   </body>

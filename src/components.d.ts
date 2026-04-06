@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface LtcSideDrawer {
+        "open": () => Promise<void>;
         /**
           * Defines whether the side drawer is opened or closed.
           * @default false
