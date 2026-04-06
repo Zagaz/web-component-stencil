@@ -9,6 +9,7 @@ export namespace Components {
     interface LtcSideDrawer {
         /**
           * Defines whether the side drawer is opened or closed.
+          * @default false
          */
         "opened": boolean;
         /**
@@ -33,6 +34,7 @@ declare namespace LocalJSX {
     interface LtcSideDrawer {
         /**
           * Defines whether the side drawer is opened or closed.
+          * @default false
          */
         "opened"?: boolean;
         /**

@@ -13,8 +13,7 @@
         margin: 0;
         padding: 0;
       }
-      body{
-      
+      body {
         font-family: Arial, sans-serif;
         padding: 10px;
       }
@@ -28,23 +27,43 @@
           list-style: none;
           li {
             margin-right: 1rem;
-            a{
+            a {
               text-decoration: none;
             }
           }
         }
       }
+
+      #side-drawer-button {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        z-index: 1000;
+      }
     </style>
   </head>
   <body>
-    <ltc-side-drawer title="Lorem Minem Titulum" opened >
-      <nav>
-        <ul>
-          <li><a href="#unum">Unum</a></li>
-          <li><a href="#duet">Duet </a></li>
-          <li><a href="#trio">Trio</a></li>
-        </ul>
-      </nav>
-    </ltc-side-drawer>
+    <header>
+      <ltc-side-drawer title="Lorem Minem Titulum" opened>
+        <button id="side-drawer-button">Click</button>
+        <nav>
+          <ul>
+            <li><a href="#unum">Unum</a></li>
+            <li><a href="#duet">Duet </a></li>
+            <li><a href="#trio">Trio</a></li>
+          </ul>
+        </nav>
+      </ltc-side-drawer>
+    </header>
+    <script>
+      const button = document.querySelector('#side-drawer-button');
+      const sideDrawer = document.querySelector('ltc-side-drawer');
+      button.addEventListener('click', () => {
+        sideDrawer.opened = true
+      });
+    </script>
   </body>
 </html>
