@@ -7,58 +7,10 @@
 
     <script type="module" src="/build/web-component-stencil.esm.js"></script>
     <script nomodule src="/build/web-component-stencil.js"></script>
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: Arial, sans-serif;
-        padding: 10px;
-      }
-      nav {
-        ul {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 0 1rem;
-          list-style: none;
-          li {
-            margin-right: 1rem;
-            a {
-              text-decoration: none;
-            }
-          }
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
-    
-      <ltc-side-drawer title="Lorem Minem Titulum" opened >
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-
-      </ltc-side-drawer>
-    </header>
+    <nasa-apod></nasa-apod>
+    </script> 
   </body>
 </html>
-<script>
-  // Example of calling the exampleMethod from the side drawer component
-  document.addEventListener('DOMContentLoaded', () => {
-    const sideDrawer = document.querySelector('ltc-side-drawer');
-    if (sideDrawer) {
-      sideDrawer.exampleMethod().then(result => {
-        console.log(result); 
-      });
-    }
-  });
-  
-</script>

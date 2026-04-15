@@ -19,6 +19,8 @@ export namespace Components {
          */
         "theTitle": string;
     }
+    interface NasaApod {
+    }
 }
 declare global {
     interface HTMLLtcSideDrawerElement extends Components.LtcSideDrawer, HTMLStencilElement {
@@ -27,8 +29,15 @@ declare global {
         prototype: HTMLLtcSideDrawerElement;
         new (): HTMLLtcSideDrawerElement;
     };
+    interface HTMLNasaApodElement extends Components.NasaApod, HTMLStencilElement {
+    }
+    var HTMLNasaApodElement: {
+        prototype: HTMLNasaApodElement;
+        new (): HTMLNasaApodElement;
+    };
     interface HTMLElementTagNameMap {
         "ltc-side-drawer": HTMLLtcSideDrawerElement;
+        "nasa-apod": HTMLNasaApodElement;
     }
 }
 declare namespace LocalJSX {
@@ -44,6 +53,8 @@ declare namespace LocalJSX {
          */
         "theTitle"?: string;
     }
+    interface NasaApod {
+    }
 
     interface LtcSideDrawerAttributes {
         "theTitle": string;
@@ -52,6 +63,7 @@ declare namespace LocalJSX {
 
     interface IntrinsicElements {
         "ltc-side-drawer": Omit<LtcSideDrawer, keyof LtcSideDrawerAttributes> & { [K in keyof LtcSideDrawer & keyof LtcSideDrawerAttributes]?: LtcSideDrawer[K] } & { [K in keyof LtcSideDrawer & keyof LtcSideDrawerAttributes as `attr:${K}`]?: LtcSideDrawerAttributes[K] } & { [K in keyof LtcSideDrawer & keyof LtcSideDrawerAttributes as `prop:${K}`]?: LtcSideDrawer[K] };
+        "nasa-apod": NasaApod;
     }
 }
 export { LocalJSX as JSX };
@@ -59,6 +71,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ltc-side-drawer": LocalJSX.IntrinsicElements["ltc-side-drawer"] & JSXBase.HTMLAttributes<HTMLLtcSideDrawerElement>;
+            "nasa-apod": LocalJSX.IntrinsicElements["nasa-apod"] & JSXBase.HTMLAttributes<HTMLNasaApodElement>;
         }
     }
 }

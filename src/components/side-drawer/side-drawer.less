@@ -6,6 +6,7 @@ aside {
   height: 100vh;
   max-width: 80%;
   transform: translateX(calc(-100% + 6rem));
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   z-index: 1000;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
@@ -127,8 +128,6 @@ main {
   gap: 1rem;
   padding: 1rem;
 
-
-
   button {
     font-size: small;
     flex: 1;
@@ -177,3 +176,10 @@ main {
   }
 }
 
+// Styles for slotted content should handle layout, while 
+// global CSS handles the internal decoration (bullets/underscores).
+::slotted(nav) {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+}
